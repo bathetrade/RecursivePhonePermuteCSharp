@@ -99,6 +99,25 @@ namespace RecursivePhonePermute
             return _letterGroups[digit - 2];
         }
 
+        /// <summary>
+        /// <para>Converts each digit in phoneNumbers to its corresponding letter group. Then, permutes all combinations of letters by selecting one letter from each group.</para>
+        /// <para>For example, "23" maps to "abc" and "def" respectively. Therefore, the permutations would be:</para>
+        /// 
+        /// <para>
+        /// ad
+        /// ae
+        /// af
+        /// bd
+        /// be
+        /// bf
+        /// cd
+        /// ce
+        /// cf
+        /// </para>
+        /// 
+        /// The OnEachPermutation event is fired on each permutation.
+        /// </summary>
+        /// <param name="phoneNumbers">A string consisting of the digits 2 through 9. An ArgumentException will be thrown if phoneNumbers is empty, null, or one of its characters is not a digit between 2 and 9.</param>
         public void PermutePhoneNumberLetterGroups(string phoneNumbers)
         {
             if (!PhoneNumbersConvertibleToLetterGroups(phoneNumbers))
